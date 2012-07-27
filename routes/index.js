@@ -12,7 +12,7 @@ exports.sms = function (req, res) {
   var tropo = new tropowebapi.TropoWebAPI(),
       text  = req.body;
 
-  // db.put({
+  // db.set({
   //   lat: text.split(',')[0],
   //   lon: text.split(',')[1],
   //   type: text.split(',')[2]
@@ -24,3 +24,10 @@ exports.sms = function (req, res) {
   res.writeHead(200, {'Content-Type': 'application/json'});
   res.end(tropowebapi.TropoJSON(tropo));
 };
+
+exports.attacks = function (req, res) {
+  db.get({}, function (data) {
+    res.writeHead(200, {'Content-Type': 'application/json'});
+    res.end(JSON.stringify(data));
+  });
+}
