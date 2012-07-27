@@ -1,6 +1,6 @@
 /* Get homepage */
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' })
+  res.render('index', { title: 'Athens Attacks' })
 };
 
 /* Tropo's get route for text messages */
@@ -14,4 +14,3 @@ exports.sms = function (req, res) {
   res.writeHead(200, {'Content-Type': 'application/json'});
   res.end(tropowebapi.TropoJSON(tropo));
 };
-
