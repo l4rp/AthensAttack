@@ -1,4 +1,5 @@
-var tropowebapi = require('tropo-webapi');
+var tropowebapi = require('tropo-webapi'),
+    db          = require('../lib/db');
 
 /* Get homepage */
 exports.index = function(req, res){
@@ -8,10 +9,16 @@ exports.index = function(req, res){
 /* Tropo's get route for text messages */
 
 exports.sms = function (req, res) {
-  var tropo = new tropowebapi.TropoWebAPI(); 
+  var tropo = new tropowebapi.TropoWebAPI(),
+      text  = req.body;
 
-  tropo.say("Hello, World!");
-  console.log(tropo);
+  // db.put({
+  //   lat: text.split(',')[0],
+  //   lon: text.split(',')[1],
+  //   type: text.split(',')[2]
+  // });
+
+  tropo.say('Thank you');
 
   // Render out the JSON for Tropo to consume.
   res.writeHead(200, {'Content-Type': 'application/json'});
