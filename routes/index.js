@@ -1,3 +1,5 @@
+var tropowebapi = require('tropo-webapi');
+
 /* Get homepage */
 exports.index = function(req, res){
   res.render('index', { title: 'Athens Attacks' })
@@ -9,6 +11,7 @@ exports.sms = function (req, res) {
   var tropo = new tropowebapi.TropoWebAPI(); 
 
   tropo.say("Hello, World!");
+  console.log(tropo);
 
   // Render out the JSON for Tropo to consume.
   res.writeHead(200, {'Content-Type': 'application/json'});
