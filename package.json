@@ -6,8 +6,7 @@
     "express": "2.5.8",
     "less": ">= 0.0.1",
     "jade": ">= 0.0.1",
-    "tropo-webapi": "1.0.16",
-    "redis": "0.7.2"
+    "tropo-webapi": "1.0.16"
   },
   "subdomain": "aa",
   "scripts": {
